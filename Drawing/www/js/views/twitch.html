@@ -1,0 +1,33 @@
+<ion-view title="Twitch">
+	<ion-content>
+    <div class="list card">
+
+        <div class="item item-avatar">
+          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/panel-82630495-image-5120c379b462781a-320.jpeg">
+          <h2>{{datatwitch.channel.status}}</h2>
+          <p>TEAM KAMI</p>
+        </div>
+
+        <div class="item">
+          <iframe
+							class="chatapi"
+              src="http://player.twitch.tv/?channel=kami_berserk"
+              frameborder="0"
+              scrolling="no"
+							height="310"
+        			width="580"
+              allowfullscreen="true">
+          </iframe>
+
+            <iframe class="chatapi" frameborder="0" scrolling="no" id="chat_embed" src="http://www.twitch.tv/kami_berserk/chat" height="500" width="350"></iframe>
+        </div>
+
+        <p class="item assertive flexspacebetween">
+          <span><i class="icon ion-android-contacts fontsizeup"></i>{{datatwitch.viewers}} <span ng-if="datatwitch.viewers > 0">en Ligne</span></span>
+          <span><i class="icon ion-eye large-icon fontsizeup"></i>{{datatwitch.channel.views}}</span>
+          <span><i class="icon ion-ios-heart fontsizeup"></i>{{datatwitch.channel.followers}} Followers</span>
+        </p>
+
+      </div>
+  </ion-content>
+</ion-view>

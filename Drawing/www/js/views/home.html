@@ -1,0 +1,53 @@
+<ion-view title="Home">
+	<ion-content>
+    <!-- debut modal -->
+    <script id="newsModal.html" type="text/ng-template">
+        <ion-modal-view>
+          <ion-header-bar class="bar-royal">
+            <button class="button button-outline button-balanced"  ng-click="closeModal()"><i class="icon ion-arrow-return-left"></i>Back</button>
+            <h1 class="title">NEWS</h1>
+          </ion-header-bar>
+          <ion-content>
+            <div class="list card">
+
+              <div class="item item-avatar item-outline item-calm">
+                <img src="{{modalNews.avatar}}">
+                <h2 class="yellowtext">{{modalNews.titre}}</h2>
+                <p>{{modalNews.date}}</p>
+              </div>
+
+              <div class="item item-body">
+                <img class="full-image" src="{{modalNews.image}}">
+                <p ng-bind-html="modalNews.paragraphe">
+
+                </p>
+
+              </div>
+
+            </div>
+          </ion-content>
+        </ion-modal-view>
+      </script>
+      <!-- fin modal -->
+
+    <div class="list card" ng-repeat="news in homeNews">
+
+      <div class="item item-avatar item-outline item-calm">
+        <img src="{{news.avatar}}">
+        <h2 class="yellowtext">{{news.titre}}</h2>
+        <p>{{news.date}}</p>
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" src="{{news.image}}">
+        <p>
+          {{news.paragraphepreview}}
+        </p>
+
+        <a class="button icon-right ion-ios-paw button-assertive" ng-click="openNewsModal($index)">Lire la suite</a>
+
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,44 @@
+<ion-view title="Title">
+	<ion-content>
+		<!-- debut modal -->
+		<script id="message.html" type="text/ng-template">
+			<div class="card" style="margin-top: 50%" >
+			  <div class="item item-divider bar-balanced bar" ng-show="succes">
+			    Félicitation!
+			  </div>
+			  <div class="item item-divider bar-assertive bar" ng-hide="succes">
+			    ERROR!
+			  </div>
+			  <div class="item item-text-wrap">
+			    {{message}}
+			  </div>
+			</div>
+		</script>
+		<!-- fin modal -->
+    <div class="list">
+      <form ng-submit="posterForum(repertoire)">
+        <select id="optionCandy" class="browser-default teal-text text-lighten-2" ng-model="repertoire">
+          <option value="" disabled selected>Choisissez La Section</option>
+          <option  value="tutotete">tuto-tete</option>
+          <option value="tutocorp">tuto-corp</option>
+          <option value="tutoperspective">tuto-perspective</option>
+          <option value="manga">manga</option>
+          <option value="divers">divers</option>
+        </select>
+        <input type="text" name="name" value="" ng-model="forumpush.titre">
+        <label for="comment" style="display:block;">Votre texte:</label>
+        <textarea ng-model="forumpush.texte" style="width:100%"> </textarea>
+        <button class="button button-outline button-positive separation" ng-click="">
+          Envoyer
+        </button>
+      </form>
+
+        <br>
+        <button class="button icon-left ion-camera" ng-click="takePicture()">Clic</button>
+        <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+  	    <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
+  	    <img  src="{{image}}" ng-repeat="image in tableauImage">
+
+    </div>
+  </ion-content>
+</ion-view>

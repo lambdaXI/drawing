@@ -1,0 +1,31 @@
+<ion-view title="Tuto">
+	<ion-content>
+    <!-- debut modal -->
+    <script id="tutoModal.html" type="text/ng-template">
+        <ion-modal-view>
+          <ion-header-bar class="bar-assertive">
+            <button class="button button-outline button-energized"  ng-click="closeModal()"><i class="icon ion-arrow-return-left"></i>Back</button>
+            <h1 class="title">Lesson</h1>
+          </ion-header-bar>
+          <ion-content>
+						<div id="lesson">
+						</div>
+          </ion-content>
+
+        </ion-modal-view>
+      </script>
+    <!-- fin modal -->
+    <div class="list">
+
+      <div class="item item-divider">
+        Les bases
+      </div>
+
+      <a class="item" ng-click="opentutoModal(Data)" ng-repeat="Data in tutoData">
+        {{Data.titre}}
+      </a>
+
+
+    </div>
+  </ion-content>
+</ion-view>

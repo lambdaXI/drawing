@@ -1,0 +1,30 @@
+<ion-view title="S'enregistrer">
+	<ion-content>
+		<!-- debut modal -->
+		<script id="message.html" type="text/ng-template">
+			<div class="card" style="margin-top: 50%" >
+			  <div class="item item-divider bar-balanced bar" ng-show="succes">
+			    Félicitation!
+			  </div>
+			  <div class="item item-divider bar-assertive bar" ng-hide="succes">
+			    ERROR!
+			  </div>
+			  <div class="item item-text-wrap">
+			    {{message}}
+			  </div>
+			</div>
+		</script>
+		<!-- fin modal -->
+    <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Email" ng-model="userParse.login" ng-required="true">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Password" ng-model="userParse.password" ng-required="true">
+        </label>
+        <button class="button button-block button-positive" ng-click="inscription()">
+          Register
+        </button>
+      </div>
+  </ion-content>
+</ion-view>

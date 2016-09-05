@@ -1,0 +1,39 @@
+<ion-view title="Firebase Push">
+	<ion-content>
+		<!-- DEBUT MODAL -->
+    <script id="newsModal.html" type="text/ng-template">
+        <ion-modal-view>
+          <ion-header-bar class="bar-assertive">
+            <h1 class="title">My Modal title</h1>
+          </ion-header-bar>
+          <ion-content>
+            Hello!<br/>
+            <button class="button button-royal"  ng-click="closeModal()">close modal</button>
+          </ion-content>
+
+        </ion-modal-view>
+      </script>
+			<!-- FIN MODAL -->
+    <div class="list card">
+
+        <div class="item item-avatar item-outline item-calm">
+          <img src="{{newspush.avatar}}">
+          <h2 class="yellowtext">{{newspush.titre}}</h2>
+          <p>{{newspush.date}}</p>
+        </div>
+
+        <div class="item item-body">
+          <img class="full-image" src="{{newspush.image}}">
+          <p>
+            {{newspush.paragraphe}}
+          </p>
+
+          <a class="button icon-right ion-ios-paw button-assertive" ng-click="openModal()">Lire la suite</a>
+
+        </div>
+      </div>
+
+      <button class="button button-royal"  ng-click="ajoutNews()">ajouter a la DataBase</button>
+
+  </ion-content>
+</ion-view>

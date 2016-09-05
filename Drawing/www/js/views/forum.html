@@ -1,0 +1,82 @@
+<ion-view title="Title">
+	<ion-content>
+    <!--DEBUT MODAL CREATION -->
+    <script id="message.html" type="text/ng-template">
+        <ion-modal-view>
+          <ion-header-bar>
+            <h1 class="title">My Modal title</h1>
+          </ion-header-bar>
+          <ion-content>
+            Hello!
+          </ion-content>
+        </ion-modal-view>
+      </script>
+      <!--FIN MODAL CREATION -->
+    <div class="list card">
+	        <!--DEBUT  SECTION COUR TUTO -->
+	        <a class="item item-icon-left forumclick">
+	          <i class="icon ion-home"></i>
+	          Partie Cours et Tutoriel
+	        </a>
+	        <!-- CONTENU DE LA SECTION -->
+	        <div class="displayOff list card">
+          <button type="button" name="button" ui-sref="creationforum">Creer article</button>
+          <a class="item forumclick">Tête</a>
+          <a class="item displayOff" ng-repeat="datan1 in databaseTutoCorp">
+            {{datan1.titre}}
+          </a>
+					<div ng-hide="databaseTutoTete" class="item displayOff">
+						Aucun Article
+					</div>
+					<a class="item forumclick">Corp</a>
+					<a class="item displayOff" ng-repeat="datan3 in databaseTutoCorp">
+						{{datan3.titre}}
+					</a>
+					<div ng-hide="databaseTutoCorp" class="item displayOff">
+						Aucun Article
+					</div>
+					<a class="item forumclick">Perspective</a>
+					<a class="item displayOff" ng-repeat="data in databaseTutoCorp">
+						{{data.titre}}
+					</a>
+					<div ng-hide="databaseTutoPerspective" class="item displayOff">
+						Aucun Article
+					</div>
+        </div>
+
+
+        <!--FIN  SECTION COUR TUTO -->
+
+
+      </div>
+      <div class="list card">
+        <!--DEBUT  SECTION MANGA -->
+        <a  class="item item-icon-left forumclick">
+          <i class="icon ion-ios-telephone"></i>
+          Section Manga
+        </a>
+				<a class="item displayOff" ng-repeat="data in databaseTutoCorp">
+					{{data.titre}}
+				</a>
+				<div ng-hide="databaseTutoPerspective" class="item displayOff">
+					Aucun Article
+				</div>
+
+        <!--FIN  SECTION MANGA -->
+
+        <!--DEBUT  SECTION DIVERS -->
+        <a  class="item item-icon-left forumclick">
+          <i class="icon ion-wifi"></i>
+          Section Divers
+        </a>
+        <!-- CONTENU DE LA SECTION -->
+				<a class="item displayOff" ng-repeat="data in databaseTutoCorp">
+					{{data.titre}}
+				</a>
+				<div ng-hide="databaseTutoPerspective" class="item displayOff">
+					Aucun Article
+				</div>
+        <!--FIN  SECTION DIVERS -->
+      </div>
+  </ion-content>
+</ion-view>
